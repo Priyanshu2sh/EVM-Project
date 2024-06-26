@@ -33,25 +33,31 @@ This project is a demonstration of how Electronic Voting Machines (EVMs) can be 
    pip install -r requirements.txt
    ```
 
-4. Make migrations:
+4. Change to the project directory:
+
+   ```bash
+   cd evm_project
+   ```
+
+5. Make migrations:
 
    ```bash
    python manage.py makemigrations
    ```
 
-5. Apply migrations:
+6. Apply migrations:
 
    ```bash
    python manage.py migrate
    ```
 
-6. Run the development server:
+7. Run the development server:
 
    ```bash
    python manage.py runserver
    ```
 
-7. Open your web browser and navigate to `http://127.0.0.1:8000`.
+8. Open your web browser and navigate to `http://127.0.0.1:8000`.
 
 ## Usage
 
