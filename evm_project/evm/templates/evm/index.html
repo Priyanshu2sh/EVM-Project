@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVM</title>
+    <style>
+        h1 {
+            font-size: 40px;
+            color: #c74343;
+            margin-left: 20px;
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        input[type='button'] {
+            display: block;
+            font-size: 30px;
+            margin: 20px auto;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #f57c00;
+            color: #fff;
+            text-transform: uppercase;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+        }
+
+        input[type='button']:hover {
+            background-color: #e64a19;
+        }
+
+        label {
+            display: inline-block;
+            font-size: 30px;
+            margin-left: 20px;
+            margin-top: 15px;
+            color: #394585;
+        }
+
+        span {
+            display: inline-block;
+            font-size: 30px;
+            margin-left: 10px;
+            color: #aa326f;
+            font-weight: bold;
+            background-color: #ffd700;
+            padding: 5px 10px;
+            border-radius: 3px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        span:hover {
+            transform: scale(1.1);
+        }
+
+        button:focus {
+            outline: none;
+            background-color: #00bcd4;
+            box-shadow: 0px 0px 10px rgba(0, 0, 255, 0.3);
+        }
+
+        /* Media Query for Mobile Devices */
+        @media only screen and (max-width: 600px) {
+            h1 {
+                font-size: 30px;
+                margin-left: 10px;
+                margin-top: 10px;
+            }
+
+            input[type='button'] {
+                font-size: 24px;
+                margin: 10px auto;
+                padding: 8px 16px;
+            }
+
+            label {
+                font-size: 24px;
+                margin-left: 10px;
+                margin-top: 10px;
+            }
+
+            span {
+                font-size: 24px;
+                margin-left: 5px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Choose a party to vote</h1>
+    <input type="button" value="Party A" id="partyA">
+    <label>Total Votes of A:-</label><span id="txta">{{party_a_votes}}</span>
+    <input type="button" value="Party B" id="partyB">
+    <label>Total Votes of B:-</label><span id="txtb">{{party_b_votes}}</span>
+    <input type="button" value="Party C" id="partyC">
+    <label>Total Votes of C:-</label><span id="txtc">{{party_c_votes}}</span>
+    <input type="button" value="Party D" id="partyD">
+    <label>Total Votes of D:-</label><span id="txtd">{{party_d_votes}}</span>
+
+
+    <script>
+        document.getElementById('partyA').addEventListener('click', function (event) {
+            event.preventDefault();
+            window.location.href = "{% url 'voteA' %}";
+        });
+
+        document.getElementById('partyB').addEventListener('click', function (event) {
+            event.preventDefault();
+            window.location.href = "{% url 'voteB' %}";
+        });
+
+        document.getElementById('partyC').addEventListener('click', function (event) {
+            event.preventDefault();
+            window.location.href = "{% url 'voteC' %}";
+        });
+
+        document.getElementById('partyD').addEventListener('click', function (event) {
+            event.preventDefault();
+            window.location.href = "{% url 'voteD' %}";
+        });
+    </script>
+</body>
+
+</html>
